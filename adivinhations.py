@@ -94,11 +94,13 @@ while True:
 
         if adivinhado.isnumeric():
           adivinhado = int(adivinhado)
-          if adivinhado > randint: #se input for maior
+          if adivinhado > 100: #se o input for maior que 100
+                SpacePrint("Derrota, Você digitou um número que não estava entre os corretos")
+                break
+          elif adivinhado > randint: #se input for maior
                 try:
                   salvo
                 except:            
-                  print(randint)
                   SpacePrint(f"Incorreto, a resposta está entre {GetRight()} e {adivinhado}")
                   contador = contador + 1
                   salvo = adivinhado
@@ -108,7 +110,6 @@ while True:
                     SpacePrint("Derrota, Você digitou um número que não estava entre os corretos")
                     break
                   else:
-                    print(randint)
                     SpacePrint(f"Incorreto, a resposta está entre {GetRight()} e {adivinhado}")
                     contador = contador + 1
                     salvo = adivinhado
@@ -117,7 +118,6 @@ while True:
                 try:
                   right
                 except:
-                  print(randint)
                   SpacePrint(f"Incorreto, a resposta está entre {adivinhado} e {GetSalvo()}")
                   contador = contador + 1
                   right = adivinhado
@@ -127,7 +127,6 @@ while True:
                     SpacePrint("Derrota, Você digitou um número que não estava entre os corretos")
                     break
                   else:
-                    print(randint)
                     SpacePrint(f"Incorreto, a resposta está entre {adivinhado} e {GetSalvo()}")
                     contador = contador + 1
                     right = adivinhado
@@ -151,7 +150,10 @@ while True:
 
         if adivinhado.isnumeric():
           adivinhado = int(adivinhado)
-          if adivinhado > randint: #se input for maior
+          if adivinhado > 100: #se o input for maior que 100
+                SpacePrint("Derrota, Você digitou um número que não estava entre os corretos")
+                break
+          elif adivinhado > randint: #se input for maior
               try:
                 salvo
               except:            
